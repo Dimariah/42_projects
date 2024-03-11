@@ -6,7 +6,7 @@
 /*   By: yiken <yiken@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 14:07:45 by yiken             #+#    #+#             */
-/*   Updated: 2024/03/07 12:23:13 by yiken            ###   ########.fr       */
+/*   Updated: 2024/03/11 16:01:05 by yiken            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ char	*get_next_word(char **av, char sep)
 	while (av[j][i + len] != sep && av[j][i + len])
 		len++;
 	str = malloc(len + 1);
+	if (!str)
+		return (0);
 	len = 0;
 	while (av[j][i] != sep && av[j][i])
 		str[len++] = av[j][i++];
