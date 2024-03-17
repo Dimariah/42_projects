@@ -6,7 +6,7 @@
 #    By: yiken <yiken@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/05 12:22:03 by yiken             #+#    #+#              #
-#    Updated: 2024/03/08 13:53:46 by yiken            ###   ########.fr        #
+#    Updated: 2024/03/17 14:10:09 by yiken            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ all			:	$(NAME)
 $(NAME)		:	$(PRIM_LIB) $(PUSH_SWAP_O)
 	@ar rc $^
 	@cc $< -o $@
+	@rm $<
 
 $(PRIM_LIB)	:	$(OBJS)
 	@ar rc $@ $^
@@ -45,6 +46,7 @@ bonus		:	$(BONUS)
 $(BONUS)	:	$(PRIM_LIB) $(CHECKER_O)
 	@ar rc $^
 	@cc $< -o $@
+	@rm $<
 
 clean		:
 	@rm -f $(OBJS) $(PRIM_LIB) $(PUSH_SWAP_O) $(CHECKER_O)
